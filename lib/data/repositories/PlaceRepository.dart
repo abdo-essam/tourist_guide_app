@@ -43,11 +43,33 @@ class PlaceRepository {
       imageUrl: 'assets/images/museum.png',
       description: 'Museum of ancient Egyptian antiquities',
     ),
+    Place(
+      id: '6',
+      name: 'Abu Simbel',
+      governorate: 'Aswan',
+      imageUrl: 'assets/images/abu_simbel.png',
+      description:
+          'Abu Simbel is a historic site comprising two massive rock-cut temples in the village of Abu Simbel',
+    ),
+    Place(
+      id: '7',
+      name: 'Siwa Oasis',
+      governorate: 'Matrouh',
+      imageUrl: 'assets/images/siwa.png',
+      description: 'Siwa Oasis is a historic site comprising two massive rock-cut',
+    ),
+    Place(
+      id: '8',
+      name: 'Citadel of Qaitbay',
+      governorate: 'Alexandria',
+      imageUrl: 'assets/images/citadel.png',
+    description: 'The Citadel of Qaitbay is a 15th-century defensive fortress located on the Mediterranean sea coast',
+    ),
   ];
 
   Future<List<Place>> getSuggestedPlaces() async {
     final favorites = await _getFavoriteIds();
-    return _allPlaces.sublist(0, 3).map((place) {
+    return _allPlaces.sublist(0, 4).map((place) {
       place.isFavorite = favorites.contains(place.id);
       return place;
     }).toList();
@@ -55,7 +77,7 @@ class PlaceRepository {
 
   Future<List<Place>> getPopularPlaces() async {
     final favorites = await _getFavoriteIds();
-    return _allPlaces.sublist(3).map((place) {
+    return _allPlaces.sublist(4).map((place) {
       place.isFavorite = favorites.contains(place.id);
       return place;
     }).toList();
@@ -68,8 +90,7 @@ class PlaceRepository {
         .map((place) {
       place.isFavorite = true;
       return place;
-    })
-        .toList();
+    }).toList();
   }
 
   Future<List<String>> _getFavoriteIds() async {

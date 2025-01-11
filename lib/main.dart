@@ -18,7 +18,7 @@ class TouristGuideApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: AppRouter.login,
+      initialRoute: AppRouter.home,
     );
   }
 }

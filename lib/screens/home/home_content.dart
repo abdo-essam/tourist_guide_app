@@ -85,7 +85,7 @@ class _HomeContentState extends State<HomeContent> {
     }
 
     return RefreshIndicator(
-      onRefresh: _loadPlaces,
+      onRefresh: _loadPlaces, 
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Column(
